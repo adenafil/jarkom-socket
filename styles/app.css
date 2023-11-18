@@ -1,0 +1,185 @@
+/* import font */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap');
+
+
+/* reset css start */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* reset css end */
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav {
+    width: 100%;
+    height: 100px;
+    background-color: #eceff1;
+}
+
+nav h1 {
+    color: #000000;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+}
+
+.chat {
+    /* width: 100%; */
+    height: 100vh;
+}
+
+.container-chat {
+    /* width: 100px; */
+    /* background-color: red; */
+    width: 80%;
+}
+
+ul {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.box {
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.user-notyou {
+     background-color: #30b1fd;
+}
+
+.user-real {
+    background-color: #eceff1;
+    position: relative;
+    left: 1100px;
+}
+
+.name {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+}
+
+.pesan {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pesan .message {
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    text-align: left
+}
+
+.pesan .timeStamp {
+    color: white;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    text-align: right;
+}
+
+.sender-box {
+    position: fixed;
+    background-color: #eceff1;
+    /* top: -130px; */
+    bottom: 10px;
+    width: 80%; 
+    height: 70px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+
+}
+
+#form {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 40px;
+}
+
+#form input {
+    width: 1300px;
+    height: 50px;
+    border: none;
+    background-color: #eceff1;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+input:focus {
+    outline: none;
+}
+
+/* #3e4548 */

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket Application</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <nav>
+            <h1>ChatBox</h1>
+        </nav>
+
+        <div class="container-chat">
+            <div class="chat">
+
+                <ul id="list-chat">
+                    <li>
+                        <div class="box user-notyou">
+                            <p class="name">Ade Nafil Firmansah</p>
+                            <div class="pesan">
+                                <p class="message">Halo Apa Kabar ?</p>
+                                <p class="timeStamp">2 januari 2033</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="box user-notyou">
+                            <p class="name">Ade Nafil Firmansah</p>
+                            <div class="pesan">
+                                <p class="message">Halo Apa Kabar ?</p>
+                                <p class="timeStamp">2 januari 2033</p>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div class="sender-box">
+                <form id="form">
+                    <input id="chat-text" autocomplete="off" />
+                    <img src="send.png" style="width: 40px; height: 40px;" alt="send">
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script>
+        const socket = io();
+        let name = prompt('what is your naem : ');
+
+        function generatePWithClass(nameClass) {
+            const p = document.createElement('p');
+            p.className = nameClass;
+            return p;
+        }
+
+        function appendChat(newName, newMessage) {
+
+            let ul = document.getElementById('list-chat');
+            let li = document.createElement('li');
+            let box = document.createElement('div')
+            box.classList.add('box');
+            box.classList.add('user-real');
+            let pesan = document.createElement('div');
+            pesan.className = 'pesan';
+            let name = generatePWithClass('name');
+            let message = generatePWithClass('message');
+            let timeStamp = generatePWithClass('timeStamp');
+
+            name.textContent = newName;
+            message.textContent = newMessage;
+            timeStamp.textContent = generateTimeStamp();
+
+            li.appendChild(box);
+            box.appendChild(name);
+            box.appendChild(pesan);
+            pesan.appendChild(message);
+            pesan.appendChild(timeStamp);
+            ul.appendChild(li);
+
+        }
+
+        document.getElementById('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            let chatValue = document.getElementById('chat-text');
+            if (chatValue.value) {
+                socket.emit('chat message', chatValue.value);
+                chatValue.value = '';
+            }
+
+        });
+
+        function generateTimeStamp() {
+            let date = new Date();
+
+            return date.getHours() + ' ' + date.getMinutes();
+        }
+
+        socket.on('chat message', (msg) => {
+
+            appendChat(name, msg);
+            console.log(name);
+            
+            console.log(msg);
+        });
+
+        socket.on('username', (msg) => {
+            appendChat(name);
+            console.log(name);
+        })
+
+        console.log(name);
+
+        
+    </script>
+</body>
+
+</html>
