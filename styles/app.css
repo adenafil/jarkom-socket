@@ -97,27 +97,19 @@ ul {
 }
 
 .box {
-    width: 400px;
+    width: 100%;
     height: 50px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     gap: 10px;
     padding: 10px;
-}
-
-.user-notyou {
-     background-color: #30b1fd;
-}
-
-.user-real {
     background-color: #eceff1;
     position: relative;
-    left: 1100px;
 }
 
 .name {
-    color: white;
+    color: black;
     font-size: 14px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
@@ -130,7 +122,7 @@ ul {
 }
 
 .pesan .message {
-    color: white;
+    color: black;
     font-size: 14px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
@@ -138,7 +130,7 @@ ul {
 }
 
 .pesan .timeStamp {
-    color: white;
+    color: black;
     font-size: 12px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
@@ -147,7 +139,7 @@ ul {
 
 .sender-box {
     position: fixed;
-    background-color: #eceff1;
+    /* background-color: #eceff1; */
     /* top: -130px; */
     bottom: 10px;
     width: 80%; 
@@ -161,25 +153,53 @@ ul {
 
 }
 
-#form {
+#chatForm {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    gap: 40px;
+    gap: 10px;
+    margin: 10px;
 }
 
-#form input {
-    width: 1300px;
+/* #namaForm {
+
+} */
+
+#chat-text {
+    width: 1000px;
     height: 50px;
     border: none;
-    background-color: #eceff1;
-    color: black;
+    color: white;
     font-size: 18px;
     font-weight: bold;
+    background-color: #eceff1;
+    border: 3px solid white;
+    border-radius: 20px;
+    padding-left: 10px;
+    color: #717678;
+}
+
+#name {
+    width: 400px;
+    height: 50px;
+    border: none;
+    color: #717678;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #eceff1;
+    border: 3px solid white;
+    border-radius: 20px;
+    padding-left: 10px;
 }
 
 input:focus {
     outline: none;
 }
 
-/* #3e4548 */
+::placeholder {
+    text-align: center;
+}
+
+#send {
+    cursor:pointer;
+}
